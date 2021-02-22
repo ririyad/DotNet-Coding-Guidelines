@@ -97,7 +97,7 @@ if (!number.HasValue)
     //do something
 }
 ```
-👍 While the preceding code is fine, we can still improve that by using the is keyword like in the following:
+👍 While the preceding code is fine, we can still improve that by using the `is` keyword like in the following:
 ```
 int? number = null;
 
@@ -108,7 +108,7 @@ if (number is null)
 ```
 
 ### Tip #6
-✋ Avoid code without braces ({}) for single conditional if statement, for and foreach loops like in the following:
+✋ Avoid code without braces (`{}`) for single conditional if statement, for and foreach loops like in the following:
 ```
 if(conditioin) action;
 ```
@@ -163,7 +163,7 @@ switch(condition)
      break;
 }
 ```
-👍 But prefer switch expressions over switch statements where possible like in the following:
+👍 But prefer [switch expressions](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/switch-expression) over switch statements where possible like in the following:
 ```
 condition switch
 {
@@ -188,10 +188,10 @@ using (MemoryStream stream = new MemoryStream())
 using var stream = new MemoryStream();
 // do something
 ```
-The preceding code reduces the number of curly braces in your method, but it can still be seen easily where a resource is disposed. For more information, see: "pattern-based using" and "using declarations"
+The preceding code reduces the number of curly braces in your method, but it can still be seen easily where a resource is disposed. For more information, see: ["pattern-based using" and "using declarations"](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-8.0/using)
 
 ### Tip #9
-✋ Avoid concatenating strings with the + sign/symbol like in the following:
+✋ Avoid concatenating strings with the `+` sign/symbol like in the following:
 ```
 string name = "Vianne";
 string greetings = "Hello " + name + "!";
@@ -258,7 +258,7 @@ Person person = new Person();
 person.FirstName = "Vianne";
 person.LastName = "Durano";
 ```
-👍 Do use object and collection initializers instead:
+👍 Do use [object and collection initializers](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/object-and-collection-initializers) instead:
 ```
 var person = new Person { 
 	FirstName = "Vianne",
@@ -281,7 +281,7 @@ public Person GetName()
     return person;
 }
 ```
-👍 Do use Tuples instead where possible:
+👍 Do use [Tuples](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples) instead where possible:
 ```
 public (string FirstName, string LastName) GetName()
 {
@@ -291,7 +291,7 @@ public (string FirstName, string LastName) GetName()
 The preceding code is more convenient for accessing objects and manipulating the data set. Tuples replaces the need to create a new class whose sole purpose is to carry around data.
 
 ### Tip #15
-✋ Try to create an Extention Methods to perform common tasks such as conversion, validationn, formatting, parsing, transformation, you name it. So, instead of doing the following:
+✋ Try to create an [Extention Methods](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods#:~:text=Extension%20methods%20enable%20you%20to,methods%20on%20the%20extended%20type.) to perform common tasks such as conversion, validationn, formatting, parsing, transformation, you name it. So, instead of doing the following:
 ```
 string dateString = "40/1001/2021";
 var isDateValid = DateTime.TryParse(dateString, our var date);
@@ -364,6 +364,7 @@ The preceding code is consistent with the Microsoft’s .NET Framework and makes
 ✋ Do not use initials as identifier abbreviations like in the following:
 ```
 private readonly PersonManager _pm;
+.
 ```
 The main reason for this is that it can cause confusion and inconsistency when you have class that might represents the same thing like in the following:
 ```
