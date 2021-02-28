@@ -21,7 +21,7 @@ else
 }
 ````
 👍 Do use ternary conditional operator (?:) instead:
-````
+````csharp
 bool result = condition ? true: false;
 ````
 The preceding code is much cleaner, easier to read and understand. On top of that, it's more concise.
@@ -38,7 +38,7 @@ if (something != null)
 }
 ```
 👍 Do use null conditional (?.) operator instead:
-```
+```csharp
 return something?.other?.whatever;
 ```
 The preceding code is also much cleaner and concise.
@@ -63,7 +63,7 @@ else
 }
 ```
 👍 Do use null coalescing (??) operator instead:
-```
+```csharp
 return something?.other?.whatever ?? string.empty;
 ```
 
